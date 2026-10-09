@@ -96,6 +96,11 @@ plastic_data_all %>%
 plastic_data_all%>%
 mutate(total_mismanage_plastic=mismanaged_plastic*population)
 
+plastic_data_all%>%
+mutate(total_mismanage_plastic=mismanaged_plastic*population)%>%
+group_by(region)%>%
+summarise(avg_waste=mean(total_mismanage_plastic))
+
 ```
 
 
